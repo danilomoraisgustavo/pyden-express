@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dashboard Administrativo | PyDen_Express</title>
+    <link rel="stylesheet" href="/css/dashboard_admin.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+</head>
+<body>
+    <div class="top-bar">
+        <div class="logo">
+            <img src="/img/logo.png" alt="Logo">
+        </div>
+        <div class="profile-info">
+            <img src="/img/default-profile-pic.png" alt="Profile Picture" id="profile-pic">
+            <div class="dropdown">
+                <button class="dropbtn" id="username">Usuário <i class="fas fa-caret-down"></i></button>
+                <div class="dropdown-content">
+                    <a href="#" id="profile-link"><i class="fas fa-user"></i> Perfil</a>
+                    <a href="#" id="settings-link"><i class="fas fa-cog"></i> Configurações</a>
+                    <a href="#" id="logout-link"><i class="fas fa-sign-out-alt"></i> Logout</a>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="container">
+        <div class="tabs">
+            <button class="tab-link active" data-tab="usuarios-tab">Usuários</button>
+            <button class="tab-link" data-tab="instituicoes-tab">Instituições</button>
+        </div>
+
+        <div id="usuarios-tab" class="tab-content active">
+            <h2>Controle de Usuários</h2>
+            <table id="user-table">
+                <thead>
+                    <tr>
+                        <th data-sort="id">ID <i class="fas fa-sort"></i></th>
+                        <th data-sort="nome_completo">Nome Completo <i class="fas fa-sort"></i></th>
+                        <th data-sort="email">Email <i class="fas fa-sort"></i></th>
+                        <th data-sort="cpf">CPF <i class="fas fa-sort"></i></th>
+                        <th data-sort="nome_instituicao">Instituição <i class="fas fa-sort"></i></th>
+                        <th data-sort="whatsapp">WhatsApp <i class="fas fa-sort"></i></th>
+                        <th data-sort="init">Status <i class="fas fa-sort"></i></th>
+                        <th data-sort="cargo">Cargo <i class="fas fa-sort"></i></th>
+                        <th>Ações</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <!-- Linhas de usuário serão inseridas aqui pelo JavaScript -->
+                </tbody>
+            </table>
+        </div>
+
+        <div id="instituicoes-tab" class="tab-content">
+            <h2>Cadastrar Nova Instituição</h2>
+            <form id="instituicao-form">
+                <label for="nome-instituicao">Nome da Instituição:</label>
+                <input type="text" id="nome-instituicao" name="nome-instituicao" required>
+                <label for="segmento">Segmento:</label>
+                <select id="segmento" name="segmento" required>
+                    <option value="Privado">Privado</option>
+                    <option value="Publico">Público</option>
+                </select>
+                <label for="codigo-uf">Estado (UF):</label>
+                <select id="codigo-uf" name="codigo-uf" required></select>
+                <label for="codigo-ibge">Município (IBGE):</label>
+                <select id="codigo-ibge" name="codigo-ibge" required></select>
+                <button type="submit">Cadastrar Instituição</button>
+            </form>
+
+            <h2>Instituições Cadastradas</h2>
+            <table id="instituicao-table">
+                <thead>
+                    <tr>
+                        <th>ID</th>
+                        <th>Nome</th>
+                        <th>Segmento</th>
+                        <th>Estado</th>
+                        <th>Município</th>
+                        <th>Ações</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <!-- Linhas de instituição serão inseridas aqui pelo JavaScript -->
+                </tbody>
+            </table>
+
+            <!-- Modal de Edição de Instituição -->
+            <div id="edit-modal" class="modal">
+                <div class="modal-content">
+                    <span class="close">&times;</span>
+                    <h2>Editar Instituição</h2>
+                    <form id="edit-instituicao-form">
+                        <input type="hidden" id="edit-instituicao-id">
+                        <label for="edit-nome-instituicao">Nome da Instituição:</label>
+                        <input type="text" id="edit-nome-instituicao" name="edit-nome-instituicao" required>
+                        <label for="edit-segmento">Segmento:</label>
+                        <select id="edit-segmento" name="edit-segmento" required>
+                            <option value="Privado">Privado</option>
+                            <option value="Publico">Público</option>
+                        </select>
+                        <label for="edit-codigo-uf">Estado (UF):</label>
+                        <select id="edit-codigo-uf" name="edit-codigo-uf" required></select>
+                        <label for="edit-codigo-ibge">Município (IBGE):</label>
+                        <select id="edit-codigo-ibge" name="edit-codigo-ibge" required></select>
+                        <button type="submit">Salvar Alterações</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="/js/dashboard_admin.js"></script>
+</body>
+</html>

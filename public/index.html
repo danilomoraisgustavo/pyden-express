@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+    <link rel="stylesheet" href="css/style.css">
+    <script src="https://unpkg.com/vanilla-masker/build/vanilla-masker.min.js"></script>
+    <title>Página de Login | PyDen Express</title>
+    <link rel="shortcut icon" href="img/favicon.png" type="image/x-icon">
+</head>
+
+<body>
+
+    <div class="container" id="container">
+        <div class="form-container sign-up">
+            <form id="signup-form">
+                <h1>Crie sua Conta</h1><br>
+                <span>cadastre seus dados</span>
+                <div class="input-container">
+                    <i class="fas fa-user"></i>
+                    <input type="text" placeholder="Nome Completo" id="name" required>
+                    <small class="error-message" id="name-error"></small>
+                </div>
+                <div class="input-container">
+                    <i class="fas fa-envelope"></i>
+                    <input type="email" placeholder="Email" id="email" required>
+                    <small class="error-message" id="email-error"></small>
+                </div>
+                <div class="input-container">
+                    <i class="fas fa-id-card"></i>
+                    <input type="text" placeholder="CPF" id="cpf" required>
+                    <small class="error-message" id="cpf-error"></small>
+                </div>
+                <div class="input-container">
+                    <i class="fas fa-university"></i>
+                    <input type="number" placeholder="Código de Instituição" id="institution-code" required>
+                    <small class="error-message" id="institution-code-error"></small>
+                </div>
+                <div class="input-container">
+                    <i class="fas fa-phone"></i>
+                    <input type="text" placeholder="Whatsapp" id="whatsapp" required>
+                    <small class="error-message" id="whatsapp-error"></small>
+                </div>
+                <div class="input-container">
+                    <i class="fas fa-lock"></i>
+                    <input type="password" placeholder="Senha" id="password" required>
+                    <i class="fas fa-eye" id="togglePassword"></i>
+                    <small class="error-message" id="password-error"></small>
+                </div>
+                <button type="submit">Solicitar Cadastro</button><br>
+            </form>
+        </div>
+        <div class="form-container sign-in">
+            <form id="login-form">
+                <h1>Fazer Login</h1><br>
+                <span>use seu email e senha</span>
+                <div class="input-container">
+                    <i class="fas fa-envelope"></i>
+                    <input type="email" placeholder="E-mail" id="login-email" required>
+                    <small class="error-message" id="login-email-error"></small>
+                </div>
+                <div class="input-container">
+                    <i class="fas fa-lock"></i>
+                    <input type="password" placeholder="Senha" id="password-login" required>
+                    <i class="fas fa-eye" id="togglePasswordLogin"></i>
+                    <small class="error-message" id="login-password-error"></small>
+                </div>
+                <a href="#">Esqueceu sua senha?</a>
+                <button type="submit">Entrar</button>
+            </form>
+        </div>
+        <div class="toggle-container">
+            <div class="toggle">
+                <div class="toggle-panel toggle-left">
+                    <div class="logo">
+                        <img src="img/logo.png" alt="logo" width="300px">
+                    </div>
+                    <h1>Bem vindo(a) de volta!</h1>
+                    <p>Insira seus dados pessoais para usar todos os recursos do site</p>
+                    <button class="hidden" id="login">Fazer login</button>
+                </div>
+                <div class="toggle-panel toggle-right">
+                    <div class="logo">
+                        <img src="img/logo.png" alt="logo" width="300px">
+                    </div>
+                    <h1>Bem vindo(a)!</h1>
+                    <p>Registre-se com seus dados pessoais para usar todos os recursos do site</p>
+                    <button class="hidden" id="register">Cadastre-se</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="js/script.js"></script>
+</body>
+
+</html>
